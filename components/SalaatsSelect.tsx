@@ -4,7 +4,7 @@ import {
   } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 import { salaat } from './Salaats';
-import { dropdownWh } from './CommonFun';
+import { dropdownWh, colors } from './CommonFun';
 
 
 
@@ -17,7 +17,7 @@ function SalaatsSelect() {
                 selectedValue={selectSalaat}
                 style={{
                   width: dropdownWh.width,
-                  backgroundColor: '#fff',
+                  backgroundColor: colors.white,
                   height: dropdownWh.height
                 }}
                 onValueChange={(itemValue, itemIndex) =>

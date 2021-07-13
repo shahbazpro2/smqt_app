@@ -4,6 +4,7 @@ import { View, Dimensions, StyleSheet, Text, StatusBar, TouchableOpacity } from 
 import { useDispatch, useSelector } from 'react-redux';
 import { headerTypes } from './../redux/Reducers/index';
 import { setHeaderValue } from './../redux/Actions/index';
+import { getExactSizeWidth } from './CommonFun';
 const screenHeight = Math.round(Dimensions.get('screen').height);
 const screenWidth = Math.round(Dimensions.get('screen').width);
 interface Props {
@@ -25,7 +26,7 @@ const CustomHeader = ({ opacity, navigation }: Props) => {
   const { headerText } = styles;
   return (
     <>
-    {console.log('custom header')}
+      {console.log('custom header')}
       <View
         style={{
           width: '100%',
@@ -52,7 +53,7 @@ const CustomHeader = ({ opacity, navigation }: Props) => {
       >
         <Text
           style={{
-            fontSize: 24,
+            fontSize: getExactSizeWidth(24),
             color: '#fff',
             opacity: 1,
             zIndex: 1,
@@ -61,26 +62,26 @@ const CustomHeader = ({ opacity, navigation }: Props) => {
           Salaat
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ fontSize: 16, color: '#fff', paddingRight: 5 }}>
-            Login
-          </Text>
-          <View
-            style={{
-              width: (9.975 * screenWidth) / 100,
-              height: (4.601 * screenHeight) / 100,
-              borderRadius: 41 / 2,
-              borderWidth: 1,
-              borderColor: '#009200',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <FontAwesome name='user-circle' size={(9.367 * screenWidth) / 100} color='#fff' />
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ fontSize: getExactSizeWidth(16), color: '#fff', paddingRight: getExactSizeWidth(6) }}>
+              Login
+            </Text>
+            <View
+              style={{
+                width: (9.975 * screenWidth) / 100,
+                height: (4.601 * screenHeight) / 100,
+                borderRadius: getExactSizeWidth(41),
+                borderWidth: 1,
+                borderColor: '#009200',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <FontAwesome name='user-circle' size={(9.367 * screenWidth) / 100} color='#fff' />
+            </View>
           </View>
-        </View>
         </TouchableOpacity>
-        
+
       </View>
     </>
   );

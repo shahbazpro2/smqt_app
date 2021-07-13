@@ -21,3 +21,9 @@ export const ScrollOnOff = (value: boolean): types.scrollOnOff => {
         payload: value
     }
 }
+export const setNavigation = (value: {}): types.navigation => {
+    return {
+        type: types.NAVIGATION,
+        payload: value
+    }
+}

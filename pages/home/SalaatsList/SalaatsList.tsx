@@ -1,25 +1,26 @@
 import React from 'react'
 import { Text, View } from 'react-native';
-import { screenWidth } from '../../../components/CommonFun';
+import { getExactSize } from '../../../components/CommonFun';
 import SalaatCard from './../../../components/SalaatCard';
 import { salaat } from './../../../components/Salaats';
+import { colors } from './../../../components/CommonFun';
 
-const SalaatsList = ({navigation}:any) => {
+const SalaatsList = () => {
     return (
         <>
-            <Text style={{ textAlign: 'center', fontSize: 20, marginTop: 50 }}>
+            <Text style={{ textAlign: 'center', fontSize: getExactSize(20), marginTop: getExactSize(50) }}>
                 Wide Assemblage & Aggregation
             </Text>
-            <Text style={{ textAlign: 'center', color: '#707070' }}>
+            <Text style={{ textAlign: 'center', color: colors.lightGray }}>
                 Each having unique impactions, recite your favourite
             </Text>
 
             <View
                 style={{
-                    marginTop: 30,
+                    marginTop: getExactSize(30),
                 }}
             >
-                <SalaatCard navigation={navigation} salaat={salaat} />
+                <SalaatCard salaat={salaat} />
             </View>
         </>
     )

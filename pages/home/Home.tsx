@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { useHeaderHeight } from '@react-navigation/stack';
 import { useDispatch, useSelector } from 'react-redux';
-import { setHeaderHeight } from '../../redux/Actions';
+import { setHeaderHeight, setNavigation } from '../../redux/Actions';
 import CustomHeader from './../../components/CustomHeader';
 import HomeScrollView from './HomeScrollView';
 import GlobalReads from './GlobalReads';
@@ -17,7 +17,6 @@ import AdditionComp from './AdditionComp';
 import LocationComp from './LocationComp';
 import Reciting from './reciting/Reciting';
 import SalaatsList from './SalaatsList/SalaatsList';
-
 const Home = ({ navigation }: any) => {
 
     const headerh = useSelector<headerTypes, headerTypes['headerHeight']>(
@@ -28,6 +27,7 @@ const Home = ({ navigation }: any) => {
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
+        dispatch(setNavigation(navigation))
         dispatch(setHeaderHeight(headerHeight));
     }, []);
     const setOpacityFun = (op: number) => {
@@ -54,8 +54,8 @@ const Home = ({ navigation }: any) => {
                     <AdditionComp />
                     <LocationComp />
                 </ImageBackground>
-                <Reciting navigation={navigation}/>
-                <SalaatsList navigation={navigation} />
+                <Reciting />
+                <SalaatsList  />
             </HomeScrollView>
 
 

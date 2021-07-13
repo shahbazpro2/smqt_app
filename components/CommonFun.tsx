@@ -1,4 +1,6 @@
 import { Dimensions } from 'react-native';
+import { useSelector } from 'react-redux';
+import { headerTypes } from './../redux/Reducers/index';
 export const screenHeight = Math.round(Dimensions.get('screen').height);
 export const screenWidth = Math.round(Dimensions.get('screen').width);
 export const dropdownWh = {
@@ -13,4 +15,16 @@ export const getExactSizeHeight = (size: any) => {
 export const getExactSizeWidth = (size: any) => {
     const val = (size / 411) * 100;
     return (val * screenWidth) / 100
+}
+export const getExactSize = (size: any) => {
+    const val = (size / 411) * 100;
+    return (val * screenWidth) / 100
+}
+
+export const colors = {
+    green: '#009200',
+    lightGray: '#707070',
+    midGray: '#4a4a4a',
+    white: '#ffffff',
+    black: '#000000'
 }

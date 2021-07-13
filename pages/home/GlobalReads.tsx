@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from 'react-native'
-import { screenHeight } from './../../components/CommonFun';
+import { screenHeight, getExactSize } from './../../components/CommonFun';
 interface Props{
     headerh:number
 }
@@ -16,7 +16,7 @@ const GlobalReads = ({headerh}:Props) => {
                 textAlign: 'center',
                 textAlignVertical: 'center',
                 color: '#ffffff',
-                fontSize: 38,
+                fontSize: getExactSize(38),
             }}
         >
             {console.log('global')}
